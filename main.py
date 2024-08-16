@@ -45,8 +45,8 @@ twitch_miner = TwitchChannelPointsMiner(
             BET_wiN=Fore.MAGENTA                # Color allowed are: [BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET].
         ),
         telegram=Telegram(                                                          # You can omit or set to None if you don't want to receive updates on Telegram
-            chat_id=5973003888,                                                      # Chat ID to send messages @getmyid_bot
-            token="5868180244:AAF6B1ZmQTcl_OEnWLKfYO3ssUw8Nf8mPNg",                          # Telegram API token @BotFather
+            chat_id=123456789,                                                      # Chat ID to send messages @getmyid_bot
+            token="123456789:shfuihreuifheuifhiu34578347",                          # Telegram API token @BotFather
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
                     Events.BET_LOSE, Events.CHAT_MENTION],                          # Only these events will be sent to the chat
             disable_notification=True,                                              # Revoke the notification (sound/vibration)
@@ -107,6 +107,7 @@ twitch_miner = TwitchChannelPointsMiner(
 #twitch_miner.analytics(host="127.0.0.1", port=5000, refresh=5, days_ago=7)   # Start the Analytics web-server
 
 twitch_miner.mine(
+    [
        Streamer("aquamoonss", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , bet=BetSettings(strategy=Strategy.SMART      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=9999   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
        Streamer("83rserk", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , bet=BetSettings(strategy=Strategy.SMART      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=9999   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
        Streamer("actor_step", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , bet=BetSettings(strategy=Strategy.SMART      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=9999   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
